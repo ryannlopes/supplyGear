@@ -42,7 +42,7 @@
   </head>
   <body>
     <form method="POST" action="./acoes/pessoas/insert.php">
-      <h1>CADASTRO USUARIO ADMINISTRADOR</h1>
+      <h1>CADASTRO USUARIO CLIENTE</h1>
       <label for="name">Nome:</label>
       <input type="text" id="name" name="name">
       <label for="name">e-mail:</label>

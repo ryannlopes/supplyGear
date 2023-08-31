@@ -103,7 +103,7 @@
             ?>
             <td><?php echo $dados['idProduct'] ?> </td>
             <td><?php echo $dados['descript'] ?></td>
-            <td>R$<?php echo $dados['price'] ?></td>
+            <td>R$ <?php echo number_format((float)$dados['price'], 2, ',', '.'); ?></td>
             <td><?php echo $dados['quantity'] ?></td>
             <td><a class="btn btn-warning" href="editPessoa.php?idProduct=<?php echo $dados['idProduct']; ?>">EDITAR</a></td>
             <td><a class='btn btn-danger btn-sn' href="./acoes/pessoas/delete.php?idProduct=<?php echo $dados['idProduct']; ?>" data-confirm='Tem certeza de que deseja excluir o item selecionado?'>DELETAR</td>
