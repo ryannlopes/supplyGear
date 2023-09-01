@@ -52,7 +52,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
-            <th scope="col"></th>
+            <th scope="col">Empresa</th>
             <th scope="col"><a type="button" class="btn btn-success" href="cadClient.php">CADASTRAR</a></th>
           </tr>
         </thead>
@@ -61,7 +61,10 @@
             <?php
             require('conexao.php');
 
-            $query = "SELECT * FROM client";
+            $query = "SELECT c.IdClient, c.nameClient, c.emailClient, c.passClient, co.company
+            FROM client c
+            INNER JOIN company co ON c.fkIdCompany = co.idCompany;
+            ";
             $busca = mysqli_query($conn, $query);
 
             while ($dados = mysqli_fetch_array($busca)) {
@@ -70,6 +73,7 @@
             <td><?php echo $dados['IdClient'] ?> </td>
             <td><?php echo $dados['nameClient'] ?></td>
             <td><?php echo $dados['emailClient'] ?></td>
+            <td><?php echo $dados['company'] ?></td>
             <td><a class="btn btn-warning" href="editPessoa.php?IdClient=<?php echo $dados['IdClient']; ?>">EDITAR</a></td>
             <td><a class='btn btn-danger btn-sn' href="./acoes/pessoas/delete.php?IdClient=<?php echo $dados['IdClient']; ?>" data-confirm='Tem certeza de que deseja excluir o item selecionado?'>DELETAR</td>
           </tr>

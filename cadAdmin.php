@@ -41,12 +41,14 @@
     </style>
   </head>
   <body>
-    <form method="POST" action="./acoes/pessoas/insert.php">
+    <form method="POST" action="./insert/admin.php">
       <h1>CADASTRO USUARIO ADMINISTRADOR</h1>
       <label for="name">Nome:</label>
       <input type="text" id="name" name="name">
       <label for="name">e-mail:</label>
       <input type="email" id="email" name="email">
+      <label for="name">Senha</label>
+      <input type="password" id="pass" name="pass">
       <button type="submit" class="btn btn-success">Cadastrar</button>
     </form>
   </body>
