@@ -41,13 +41,30 @@
     </style>
   </head>
   <body>
-    <form method="POST" action="./acoes/pessoas/insert.php">
+    <form method="POST" action="./insert/client.php">
       <h1>CADASTRO USUARIO CLIENTE</h1>
       <label for="name">Nome:</label>
       <input type="text" id="name" name="name">
       <label for="name">e-mail:</label>
       <input type="email" id="email" name="email">
+      <label for="name">Empresa:</label>
+      <select name="company">
+        <?php
+            require('conexao.php');
+
+            $query = "SELECT * FROM company";
+            $busca = mysqli_query($conn, $query);
+
+            while ($dados = mysqli_fetch_array($busca)) {
+                $id = $dados['IdCompany'];
+            ?>
+        <option value="<?php echo $id;?>"><?php echo $id;?> - <?php echo $dados['company'];?></option>
+        <?php } ?>
+      </select>
+      <label for="name">Senha:</label>
+      <input type="password" id="password" name="pass">
       <button type="submit" class="btn btn-success">Cadastrar</button>
+      <a href='index.php' class="btn btn-primary">Voltar</a>
     </form>
   </body>
 </html>

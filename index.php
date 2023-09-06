@@ -53,6 +53,7 @@
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
             <th scope="col">Empresa</th>
+            <th scope="col"></th>
             <th scope="col"><a type="button" class="btn btn-success" href="cadClient.php">CADASTRAR</a></th>
           </tr>
         </thead>
